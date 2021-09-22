@@ -32,6 +32,7 @@ struct ContentView: View {
                 }
             }
             .navigationBarTitle(rootword)
+            .navigationBarItems(trailing: Button("New Word", action: newRound))
             .onAppear(perform: startGame)
             .alert(isPresented: $showingError){
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
@@ -98,6 +99,10 @@ struct ContentView: View {
         errorTitle = title
         errorMessage = message
         showingError = true
+    }
+    
+    func newRound(){
+        startGame()
     }
     
     
