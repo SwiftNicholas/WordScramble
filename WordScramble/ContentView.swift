@@ -10,6 +10,18 @@ var emptyString: String = ""
 var wordListFileName = "start"
 var wordListFileExtension = "txt"
 
+struct RowView: View {
+    @State var word: String
+    @State var count: Int
+    var body: some View {
+        HStack{
+            Image(systemName: "\(count).circle")
+            Text(word)
+        }
+    }
+}
+
+@available(iOS 15.0, *)
 struct ContentView: View {
     @State private var usedWords = [String]()
     @State private var rootword = emptyString
@@ -19,17 +31,20 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var totalScore = 0
     @State private var wordScore = 0
+    @FocusState private var entry: Bool
     
     var body: some View {
         NavigationView {
             VStack{
                 TextField("Enter your word", text: $newWord, onCommit: addNewWord)
+                    .keyboardType(.default)
+                    .disableAutocorrection(true)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                     .autocapitalization(.none)
+                    .focused($entry)
                 List(usedWords, id: \.self){
-                    Image(systemName: "\($0.count).circle")
-                    Text($0)
+                    RowView(word: $0, count: usedWords.count)
                 }
                 Text("Current Word Score: \(wordScore)")
                 Text("Total Score \(totalScore)")
@@ -39,7 +54,7 @@ struct ContentView: View {
             .navigationBarItems(leading: Button("Reset Score", action: newRound), trailing: Button("New Word", action: newRootWord))
             .onAppear(perform: startGame)
             .alert(isPresented: $showingError){
-                Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+                Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: Alert.Button.default(Text("Dismiss"), action: {entry = true}))
             }
         }
     }
@@ -65,7 +80,7 @@ struct ContentView: View {
         wordScore += usedWords[0].count
         totalScore += usedWords[0].count
         newWord = emptyString
-        
+        entry = true
     }
     
     func startGame(){
@@ -117,6 +132,7 @@ struct ContentView: View {
         errorTitle = title
         errorMessage = message
         showingError = true
+        entry = true
     }
     
     func newRootWord(){

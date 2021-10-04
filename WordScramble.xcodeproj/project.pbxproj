@@ -22,10 +22,18 @@
 		BF3DF44626FB83E8002D4E82 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BF3DF44826FB83E8002D4E82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF3DF44E26FB8748002D4E82 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
+		BFBD4351270AA26500055FD6 /* keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BF3DF43926FB83E7002D4E82 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFBD434E270AA26500055FD6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				BF3DF43C26FB83E7002D4E82 /* WordScramble.app */,
+				BFBD4351270AA26500055FD6 /* keyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,17 +101,37 @@
 			productReference = BF3DF43C26FB83E7002D4E82 /* WordScramble.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BFBD4350270AA26500055FD6 /* keyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFBD4359270AA26600055FD6 /* Build configuration list for PBXNativeTarget "keyboard" */;
+			buildPhases = (
+				BFBD434D270AA26500055FD6 /* Sources */,
+				BFBD434E270AA26500055FD6 /* Frameworks */,
+				BFBD434F270AA26500055FD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = keyboard;
+			productName = keyboard;
+			productReference = BFBD4351270AA26500055FD6 /* keyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BF3DF43426FB83E7002D4E82 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					BF3DF43B26FB83E7002D4E82 = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					BFBD4350270AA26500055FD6 = {
+						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
@@ -120,6 +149,7 @@
 			projectRoot = "";
 			targets = (
 				BF3DF43B26FB83E7002D4E82 /* WordScramble */,
+				BFBD4350270AA26500055FD6 /* keyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -135,6 +165,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BFBD434F270AA26500055FD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -144,6 +181,13 @@
 			files = (
 				BF3DF44226FB83E7002D4E82 /* ContentView.swift in Sources */,
 				BF3DF44026FB83E7002D4E82 /* WordScrambleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFBD434D270AA26500055FD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +320,7 @@
 				DEVELOPMENT_TEAM = 9Z83TAWGQL;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WordScramble/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -298,13 +342,67 @@
 				DEVELOPMENT_TEAM = 9Z83TAWGQL;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WordScramble/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = nicholasverrico.WordScramble;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BFBD435A270AA26600055FD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9Z83TAWGQL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = keyboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = keyboard;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nicholasverrico.WordScramble.keyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFBD435B270AA26600055FD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9Z83TAWGQL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = keyboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = keyboard;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nicholasverrico.WordScramble.keyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -327,6 +425,15 @@
 			buildConfigurations = (
 				BF3DF44C26FB83E8002D4E82 /* Debug */,
 				BF3DF44D26FB83E8002D4E82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFBD4359270AA26600055FD6 /* Build configuration list for PBXNativeTarget "keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFBD435A270AA26600055FD6 /* Debug */,
+				BFBD435B270AA26600055FD6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
