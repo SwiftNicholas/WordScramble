@@ -2070,16 +2070,6 @@ coccyges
 cochleae
 cochlear
 cochleas
-cockades
-cockatoo
-cockcrow
-cockerel
-cockeyed
-cockiest
-cockneys
-cockpits
-cocksure
-cocktail
 coconuts
 cocooned
 coddling
@@ -4595,7 +4585,6 @@ garroter
 garrotes
 gaslight
 gasoline
-gassiest
 gasworks
 gatepost
 gateways
